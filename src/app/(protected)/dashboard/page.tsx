@@ -19,10 +19,10 @@ import { auth } from "@/lib/auth";
 
 import { appointmentsTableColumns } from "../appointments/_components/table-columns";
 import StatsCards from "./_components/stats-cards";
-import TopSpecialties from "./_components/top-specialties";
 import AppointmentsChart from "./components/appointments-chart";
 import { DatePicker } from "./components/date-picker";
 import TopDoctors from "./components/top-doctors";
+import TopSpecialties from "./components/top-specialties";
 
 interface DashboardPageProps {
   searchParams: Promise<{
