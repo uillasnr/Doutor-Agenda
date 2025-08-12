@@ -18,9 +18,9 @@ import { getDashboard } from "@/data/get-dashboard";
 import { auth } from "@/lib/auth";
 
 import { appointmentsTableColumns } from "../appointments/_components/table-columns";
-import StatsCards from "./_components/stats-cards";
 import AppointmentsChart from "./components/appointments-chart";
 import { DatePicker } from "./components/date-picker";
+import StatsCards from "./components/stats-cards";
 import TopDoctors from "./components/top-doctors";
 import TopSpecialties from "./components/top-specialties";
 
@@ -41,7 +41,7 @@ const DashboardPage = async ({ searchParams }: DashboardPageProps) => {
   if (!session.user.clinic) {
     redirect("/clinic-form");
   }
-  if (!session.user.plan) {
+  if (!session.user.clinic.id) {
     redirect("/new-subscription");
   }
   const { from, to } = await searchParams;
