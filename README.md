@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Doutor Agenda
 
-## Getting Started
+Sistema de agendamento médico construído com Next.js, voltado para clínicas e profissionais da saúde.
 
-First, run the development server:
+🔗 Deploy: doutor-agenda-omega.vercel.app
 
-```bash
+🚀 Tecnologias utilizadas
+
+    •	Next.js 14 (App Router)
+    •	TypeScript
+    •	Tailwind CSS
+    •	Shadcn/UI
+    •	Drizzle ORM + Banco de Dados SQL
+    •	Auth.js (Login com Google e e-mail/senha)
+    •	ESLint & Prettier
+
+🛠️ Funcionalidades
+
+✅ Setup do Projeto
+
+    •	Inicialização do projeto Next.js
+    •	Configuração de ESLint, Prettier e Tailwind CSS
+    •	Integração com Drizzle ORM e banco de dados
+    •	Setup do shadcn/ui
+
+✅ Autenticação e Clínica
+
+    •	Login com e-mail e senha
+    •	Login com Google
+    •	Criação e gerenciamento de clínica
+    •	Fundamentos de rotas, páginas e layouts no Next.js
+
+✅ Profissionais
+
+    •	Sidebar com route groups
+    •	Cadastro, listagem, edição e exclusão de médicos
+
+⏳ Pacientes e Agendamentos (em desenvolvimento)
+
+    •	CRUD de pacientes
+    •	Agendamentos (criação, listagem e exclusão)
+
+▶️ Rodando o projeto localmente
+
+```
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse http://localhost:3000 no navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+📦 Deploy
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Este projeto está hospedado na Vercel:
+➡️ https://doutor-agenda-omega.vercel.app
