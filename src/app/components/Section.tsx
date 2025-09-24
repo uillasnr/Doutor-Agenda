@@ -50,8 +50,7 @@ export default function SectionPage() {
               </p>
             </div>
 
-            {/* Resultados */}
-            <div className="bg-card border-primary/50 space-y-3 rounded-lg border p-4">
+            <div className="bg-primary/10 border-primary/50 space-y-3 rounded-lg border p-4">
               <div className="flex items-center space-x-2">
                 <TrendingUp className="text-primary h-5 w-5" />
                 <span className="text-foreground font-semibold">
@@ -78,7 +77,6 @@ export default function SectionPage() {
               </div>
             </div>
 
-            {/* Botões */}
             <div className="flex flex-col gap-4 sm:flex-row">
               <Button
                 size="lg"
@@ -96,7 +94,6 @@ export default function SectionPage() {
               </Button>
             </div>
 
-            {/* Extras */}
             <div className="space-y-3">
               <div className="text-muted-foreground flex items-center space-x-6 text-sm">
                 <div
@@ -128,7 +125,6 @@ export default function SectionPage() {
             </div>
           </div>
 
-          {/* Imagem */}
           <div
             className={`relative transition-all delay-300 duration-1000 ${
               isVisible
@@ -138,6 +134,7 @@ export default function SectionPage() {
           >
             <div className="bg-card border-border aspect-square rounded-2xl border p-8 shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl">
               <Image
+                priority
                 fill
                 src="/doutor-conversando-paciente-sorrindo.jpg"
                 alt="Profissional de saúde usando o sistema MediFlow"
