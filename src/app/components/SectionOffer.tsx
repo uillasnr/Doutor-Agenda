@@ -1,9 +1,16 @@
 import { ArrowRight, CheckCircle, Shield } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
 export default function SectionOffer() {
+  const router = useRouter();
+
+  const handleRedirectToLogin = () => {
+    router.push("/authentication");
+  };
+
   return (
     <>
       <section className="bg-primary py-20">
@@ -68,6 +75,7 @@ export default function SectionOffer() {
 
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Button
+                onClick={handleRedirectToLogin}
                 size="lg"
                 variant="secondary"
                 className="bg-background text-foreground hover:bg-background/90 group px-8 py-4 text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
@@ -76,6 +84,7 @@ export default function SectionOffer() {
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
               <Button
+                onClick={handleRedirectToLogin}
                 size="lg"
                 variant="outline"
                 className="border-accent-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent px-8 py-4 text-lg transition-all duration-300 hover:scale-105"

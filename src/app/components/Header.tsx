@@ -1,17 +1,18 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
-  /*  const [isMenuOpen, setIsMenuOpen] = useState(false); */
-  /*   const [isVisible, setIsVisible] = useState(false); */
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const router = useRouter();
+
+  const handleRedirectToLogin = () => {
+    router.push("/authentication");
+  };
   return (
     <>
-      {/* Header */}
       <header className="border-border bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 border-b-2 backdrop-blur transition-all duration-300">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
@@ -51,7 +52,7 @@ const Header = () => {
             </nav>
             <div className="flex items-center space-x-4">
               <Button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                onClick={handleRedirectToLogin}
                 className="bg-primary cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg"
               >
                 Começar Agora

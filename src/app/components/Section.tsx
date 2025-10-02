@@ -1,14 +1,40 @@
 "use client";
 
+import { animate, motion, useMotionValue, useTransform } from "framer-motion";
 import { ArrowRight, CheckCircle, TrendingUp } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
+interface AnimatedNumberProps {
+  value: number;
+}
+
 export default function SectionPage() {
   const [isVisible, setIsVisible] = useState(false);
+  const router = useRouter();
+
+  function AnimatedNumber({ value }: AnimatedNumberProps) {
+    const motionValue = useMotionValue(0);
+    const rounded = useTransform(motionValue, (latest) => Math.round(latest));
+
+    useEffect(() => {
+      const controls = animate(motionValue, value, {
+        duration: 2,
+        ease: "easeOut",
+      });
+      return controls.stop;
+    }, [value, motionValue]);
+
+    return <motion.div>{rounded}</motion.div>;
+  }
+
+  const handleRedirectToLogin = () => {
+    router.push("/authentication");
+  };
 
   useEffect(() => {
     setIsVisible(true);
@@ -18,7 +44,6 @@ export default function SectionPage() {
     <section className="from-background to-muted overflow-hidden bg-gradient-to-b py-20 lg:py-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-2">
-          {/* Texto */}
           <div
             className={`space-y-8 transition-all duration-1000 ${
               isVisible
@@ -60,25 +85,34 @@ export default function SectionPage() {
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div className="flex items-center space-x-2">
                   <CheckCircle className="text-primary h-4 w-4" />
-                  <span>40% menos faltas</span>
+                  <span className="flex">
+                    <AnimatedNumber value={40} />% menos faltas
+                  </span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <CheckCircle className="text-primary h-4 w-4" />
-                  <span>60% menos tempo administrativo</span>
+                  <span className="flex">
+                    <AnimatedNumber value={60} />% menos tempo administrativo
+                  </span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <CheckCircle className="text-primary h-4 w-4" />
-                  <span>35% aumento na receita</span>
+                  <span className="flex">
+                    <AnimatedNumber value={35} />% aumento na receita
+                  </span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <CheckCircle className="text-primary h-4 w-4" />
-                  <span>95% satisfação dos pacientes</span>
+                  <span className="flex">
+                    <AnimatedNumber value={95} />% satisfação dos pacientes
+                  </span>
                 </div>
               </div>
             </div>
 
             <div className="flex flex-col gap-4 sm:flex-row">
               <Button
+                onClick={handleRedirectToLogin}
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground group transition-all duration-300 hover:scale-105 hover:shadow-xl"
               >
@@ -86,6 +120,7 @@ export default function SectionPage() {
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
               <Button
+                onClick={handleRedirectToLogin}
                 size="lg"
                 variant="outline"
                 className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent transition-all duration-300 hover:scale-105"
@@ -138,7 +173,7 @@ export default function SectionPage() {
                 fill
                 src="/doutor-conversando-paciente-sorrindo.jpg"
                 alt="Profissional de saúde usando o sistema MediFlow"
-                className="h-full w-full rounded-lg object-cover transition-transform duration-500 hover:scale-110"
+                className="h-full w-full rounded-lg object-cover transition-transform duration-500"
               />
             </div>
           </div>
