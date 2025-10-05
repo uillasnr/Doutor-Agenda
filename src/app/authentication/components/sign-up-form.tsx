@@ -69,7 +69,7 @@ const SignUpForm = () => {
   }
 
   return (
-    <Card>
+    <Card className="bg-gray-100">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
           <CardHeader>
@@ -84,7 +84,11 @@ const SignUpForm = () => {
                 <FormItem>
                   <FormLabel>Nome</FormLabel>
                   <FormControl>
-                    <Input placeholder="Digite seu nome" {...field} />
+                    <Input
+                      className="bg-white"
+                      placeholder="Digite seu nome"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -97,7 +101,11 @@ const SignUpForm = () => {
                 <FormItem>
                   <FormLabel>E-mail</FormLabel>
                   <FormControl>
-                    <Input placeholder="Digite seu e-mail" {...field} />
+                    <Input
+                      className="bg-white"
+                      placeholder="Digite seu e-mail"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -111,6 +119,7 @@ const SignUpForm = () => {
                   <FormLabel>Senha</FormLabel>
                   <FormControl>
                     <Input
+                      className="bg-white"
                       placeholder="Digite sua senha"
                       type="password"
                       {...field}

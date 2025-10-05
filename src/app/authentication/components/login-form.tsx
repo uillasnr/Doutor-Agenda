@@ -70,7 +70,7 @@ const LoginForm = () => {
   };
 
   return (
-    <Card>
+    <Card className="bg-gray-100">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-4">
           <CardHeader>
@@ -85,7 +85,11 @@ const LoginForm = () => {
                 <FormItem>
                   <FormLabel>E-mail</FormLabel>
                   <FormControl>
-                    <Input placeholder="Digite seu e-mail" {...field} />
+                    <Input
+                      className="bg-white"
+                      placeholder="Digite seu e-mail"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -99,6 +103,7 @@ const LoginForm = () => {
                   <FormLabel>Senha</FormLabel>
                   <FormControl>
                     <Input
+                     className="bg-white"
                       placeholder="Digite sua senha"
                       type="password"
                       {...field}
@@ -147,6 +152,14 @@ const LoginForm = () => {
                   />
                 </svg>
                 Entrar com Google
+              </Button>
+              <Button
+                type="button"
+                className="w-full"
+                variant="outline"
+                onClick={() => router.back()}
+              >
+                Voltar
               </Button>
             </div>
           </CardFooter>

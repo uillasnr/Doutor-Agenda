@@ -2,12 +2,18 @@ import * as React from "react";
 
 import { cn } from "@/lib/utils";
 
-function Card({ className, ...props }: React.ComponentProps<"div">) {
+type CardProps = React.ComponentProps<"div"> & {
+  variant?: "default" | "primary";
+};
+
+function Card({ className, variant = "default", ...props }: CardProps) {
   return (
     <div
       data-slot="card"
       className={cn(
-        "bg-primary/10 text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm",
+        "text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm",
+        variant === "default" && "bg-card", // cor padrão
+        variant === "primary" && "bg-primary/10", // segunda cor
         className,
       )}
       {...props}
