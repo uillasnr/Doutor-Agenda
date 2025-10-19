@@ -1,6 +1,6 @@
-Doutor Agenda
+🩺 Doutor Agenda
 
-Sistema de agendamento médico construído com Next.js, voltado para clínicas e profissionais da saúde.
+Doutor Agenda é um sistema de agendamento médico construído com Next.js, voltado para clínicas e profissionais da saúde. Ele permite gerenciar clínicas, profissionais, pacientes e agendamentos de forma eficiente.
 
 🔗 Deploy: doutor-agenda-omega.vercel.app
 
